@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DN STORM — Run For Her Marathon 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  /* BIG LOGO */
+.brand img {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(232,193,106,0.6));
+  animation: logoGlow 6s ease-in-out infinite;
+}
+
+/* SHINING ANIMATION */
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 6px rgba(232,193,106,0.4));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(232,193,106,1));
+    transform: scale(1.05);
+  }
+  100% {
+    filter: drop-shadow(0 0 6px rgba(232,193,106,0.4));
+    transform: scale(1);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .brand img {
+    width: 64px;
+  }
+}
+
+  /* ===== BRAND LOGO SIZE FIX ===== */
+.brand{
+  display:center;
+  align-items:center;
+  gap:20px;
+}
+
+.brand img{
+  width: 100px; /* was big */
+  filter: drop-shadow(0 10px rgba(255,255,255,0.35));
+}
+
+
+.brand-title{
+  font-size:22px;    /* Bigger DN STORM */
+  font-weight:900;
+  color:var(--gold);
+}
+
+.brand-sub{
+  font-size:14px;
+  color:#fff;
+  opacity:.9;
+}
+
+  /* === 3 DOT BUTTON === */
+.menu-btn{
+  background:none;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  padding:10px;
+}
+
+.menu-btn span{
+  width:22px;
+  height:3px;
+  background:#fff;
+  border-radius:2px;
+}
+
+/* === OVERLAY === */
+.menu-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:998;
+}
+
+.menu-overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+
+/* === DRAWER === */
+.menu-drawer{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:100%;
+  max-width:360px;
+  height:100vh;
+  background:#fff;
+  padding:20px;
+  transition:.35s ease;
+  z-index:999;
+  overflow-y:auto;
+}
+
+.menu-drawer.open{
+  right:0;
+}
+
+/* === HEADER === */
+.menu-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #eee;
+  padding-bottom:12px;
+}
+
+.menu-header strong{
+  font-size:18px;
+  color:#0b3d91;
+}
+
+.menu-header p{
+  font-size:12px;
+  color:#666;
+}
+
+#menuClose{
+  background:none;
+  border:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* === SECTIONS === */
+.menu-section{
+  margin-top:24px;
+}
+
+.menu-section h4{
+  color:#cc8d19;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.menu-section a{
+  display:block;
+  padding:8px 0;
+  text-decoration:none;
+  color:#444;
+  font-weight:600;
+}
+
+.menu-section a:hover{
+  color:#0b6aa8;
+}
+
+/* === MOBILE OPTIMIZATION === */
+@media(max-width:600px){
+  .menu-drawer{
+    max-width:100%;
+  }
+}
+
+:root{
+  --blue1:#0b6aa8;
+  --blue2:#0b3d91;
+  --gold:#E8C16A;
+  --text:#102a43;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,system-ui;
+  background:#f6f8fb;
+  color:var(--text);
+}
+
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:1200;
+  background:linear-gradient(90deg,var(--blue1),var(--blue2));
+}
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img{width:52px}
+.brand-title{font-weight:900;color:var(--gold)}
+.brand-sub{font-size:12px;color:#fff}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.btn{
+  padding:8px 18px;
+  border-radius:22px;
+  font-weight:800;
+  text-decoration:none;
+  transition:.3s;
+}
+.btn-join{
+  border:2px solid #fff;
+  color:#fff;
+}
+.btn-join:hover{background:#fff;color:var(--blue2)}
+.btn-donate{
+  background:var(--gold);
+  color:#4A0E17;
+}
+
+.dot-header strong{
+  font-size:18px;
+  color:#0b3d91;
+}
+.dot-header p{
+  font-size:12px;
+  color:#666;
+}
+#dotClose{
+  background:none;
+  border:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* DRAWER CONTENT */
+.dot-columns{
+  display:grid;
+  gap:28px;
+  margin-top:24px;
+}
+.dot-columns h4{
+  color:#0b3d91;
+  font-size:14px;
+  margin-bottom:10px;
+}
+.dot-columns a{
+  display:block;
+  text-decoration:none;
+  color:#444;
+  padding:6px 0;
+}
+.dot-columns a:hover{ color:#0b6aa8; }
+
+.hero{
+  position:relative;
+  height:420px;
+  overflow:hidden;
+}
+
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.75)
+  );
+  pointer-events:none; /* 🔥 THIS IS THE KEY */
+}
+
+.hero-content{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:1100px;
+  width:100%;
+  padding:28px;
+  color:#fff;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:42px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.hero p{
+  margin-bottom:22px;
+  font-size:16px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.hero-register{
+  background:#E8C16A;
+  color:#4A0E17;
+  padding:14px 22px;
+  border-radius:14px;
+  font-weight:900;
+  text-decoration:none;
+}
+
+.hero-details{
+  padding:12px 20px;
+  border:2px solid #fff;
+  border-radius:14px;
+  color:#fff;
+  text-decoration:none;
+}
+
+
+/* ===== ABOUT THE MARATHON ===== */
+.about-marathon{
+  padding:80px 20px;
+  background:#ffffff;
+}
+
+.about-marathon-inner{
+  max-width:900px;
+  margin:auto;
+}
+
+.about-marathon h2{
+  font-size:32px;
+  font-weight:900;
+  color:#0b6aa8;
+  margin-bottom:18px;
+}
+
+.about-marathon p{
+  font-size:16px;
+  line-height:1.8;
+  color:#556b7a;
+  margin-bottom:16px;
+}
+
+.about-highlight{
+  font-weight:700;
+  font-size:17px;
+  color:#102a43;
+}
+
+/* QUOTE */
+.about-marathon blockquote{
+  margin-top:22px;
+  padding-left:18px;
+  border-left:5px solid #e0a117;
+  font-style:italic;
+  font-weight:700;
+  color:#0b3d91;
+}
+/* ===== EVENT DETAILS GLOW ===== */
+.event-details-glow{
+  padding:70px 20px;
+  text-align:center;
+  background:#f9fbff;
+}
+
+.event-details-glow h2{
+  font-size:32px;
+  font-weight:900;
+  color:#0b3d91;
+}
+
+.event-details-glow p{
+  margin-top:10px;
+  color:#556b7a;
+  font-size:16px;
+}
+
+/* GLOW EFFECT */
+.glow-text{
+  color:#0b6aa8;
+  animation:glowPulse 2.5s infinite ease-in-out;
+}
+
+/* KEYFRAMES */
+@keyframes glowPulse{
+  0%{
+    text-shadow:
+      0 0 5px #5ab98566,
+      0 0 10px rgba(11,106,168,0.4),
+      0 0 15px rgba(120, 196, 120, 0.4);
+  }
+  90%{
+    text-shadow:
+      0 0 10px hwb(47 85% 6% / 0.9),
+      0 0 20px rgba(202, 189, 159, 0.9),
+      0 0 30px #e4ded3e6;
+    color:#e9dfcb;
+  }
+  50%{
+    text-shadow:
+      0 0 5px rgba(11,106,168,0.4),
+      0 0 10px rgba(11,106,168,0.4),
+      0 0 15px rgba(11,106,168,0.4);
+    color:#0b6aa8;
+  }
+}
+
+/* ================= EVENT INFO SECTION ================= */
+.event-info-section{
+  padding:80px 20px;
+  background:#ffffff;
+}
+
+.event-info-container{
+  max-width:1100px;
+  margin:auto;
+}
+
+.event-info-container h2{
+  font-size:32px;
+  font-weight:900;
+  color:#0b6aa8;
+  margin-bottom:16px;
+}
+
+.event-intro{
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.event-info-container p{
+  color:#556b7a;
+  line-height:1.8;
+  margin-bottom:12px;
+}
+
+.event-info-container blockquote{
+  margin:18px 0 30px;
+  padding-left:16px;
+  border-left:5px solid #E8C16A;
+  font-style:italic;
+  font-weight:700;
+  color:#0b3d91;
+}
+
+.event-overview-box{
+  background:#f3f7fc;
+  padding:20px;
+  border-radius:14px;
+  margin-bottom:40px;
+  box-shadow:0 10px 30px rgba(11,61,145,.08);
+}
+
+.event-overview-box h3{
+  color:#0b3d91;
+  margin-bottom:10px;
+  font-size:20px;
+}
+
+.info-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:22px;
+}
+
+.info-card{
+  background:#ffffff;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 12px 32px rgba(11,61,145,.08);
+}
+
+.info-card h4{
+  color:#0b6aa8;
+  margin-bottom:12px;
+  font-size:18px;
+}
+
+.info-card ul{
+  padding-left:18px;
+}
+
+.info-card li{
+  margin-bottom:8px;
+  color:#556b7a;
+}
+
+.info-card p{
+  color:#556b7a;
+  line-height:1.6;
+}
+/* ===== CASH PRIZE REWARDS ===== */
+.cash-rewards{
+  padding:90px 20px;
+  background:linear-gradient(135deg,#0b3d91,#0b6aa8);
+}
+
+.cash-title{
+  text-align:center;
+  font-size:34px;
+  font-weight:900;
+  color:#E8C16A;
+  margin-bottom:50px;
+  text-shadow:0 0 10px rgba(232,193,106,.4);
+}
+
+.reward-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+
+.reward-card{
+  background:#ffffff;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 12px 32px rgba(0,0,0,.18);
+  animation:softGlow 4s infinite ease-in-out;
+}
+
+.reward-card h3{
+  text-align:center;
+  margin-bottom:16px;
+  color:#0b3d91;
+  font-size:20px;
+  font-weight:800;
+}
+
+.reward-card table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.reward-card th{
+  background:#f3f7fc;
+  color:#0b6aa8;
+  font-weight:800;
+}
+
+.reward-card th,
+.reward-card td{
+  padding:10px;
+  text-align:center;
+  font-size:14px;
+  border-bottom:1px solid #eee;
+}
+
+.reward-card tr:last-child td{
+  border-bottom:none;
+}
+
+/* MILD SHINE EFFECT */
+@keyframes softGlow{
+  0%,100%{
+    box-shadow:0 12px 32px rgba(125, 199, 40, 0.18);
+  }
+  50%{
+    box-shadow:
+      0 0 18px rgba(232,193,106,.35),
+      0 12px 36px rgba(0,0,0,.22);
+  }
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .cash-title{font-size:26px}
+  .reward-card{padding:18px}
+}
+/* OVERLAY */
+.contact-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:none;
+  z-index:2000;
+}
+
+/* CARD */
+.contact-card{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(.9);
+  width:92%;
+  max-width:900px;
+  background:linear-gradient(90deg,#0b4f6c,#072b44);
+  border-radius:20px;
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  color:#fff;
+  opacity:0;
+  transition:.4s ease;
+  z-index:2001;
+  box-shadow:0 40px 80px rgba(0,0,0,.45);
+}
+
+/* SHOW */
+.contact-card.show{
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+}
+
+/* LEFT */
+.contact-left{
+  padding:40px;
+  text-align:center;
+}
+
+.contact-left h2{
+  font-size:28px;
+  font-weight:900;
+}
+
+.designation{
+  color:#E8C16A;
+  font-weight:700;
+  margin:10px 0 20px;
+}
+
+.contact-logo{
+  width:150px;
+  margin:20px auto;
+  filter:drop-shadow(0 0 12px rgba(232,193,106,.7));
+}
+
+.brand-quote{
+  font-size:14px;
+  opacity:.85;
+}
+
+/* RIGHT */
+.contact-right{
+  background:#081f33;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.contact-row{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  font-size:17px;
+}
+
+.contact-row a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.icon{
+  font-size:22px;
+  color:#E8C16A;
+}
+
+/* QR */
+.qr-box{
+  margin-top:20px;
+  text-align:center;
+}
+
+.qr-box img{
+  width:110px;
+  border-radius:10px;
+  background:#fff;
+  padding:6px;
+}
+
+/* CLOSE */
+.contact-close{
+  position:absolute;
+  top:14px;
+  right:18px;
+  background:none;
+  border:none;
+  font-size:22px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .contact-card{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  background:#f8fafc;
+  border-top:1px solid #e6ebf2;
+  padding:40px 20px;
+  text-align:center;
+  font-family:Inter, system-ui, sans-serif;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* Footer Links */
+.footer-links{
+  margin-bottom:14px;
+}
+
+.footer-links a{
+  margin:0 14px;
+  color:#0b3d91;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  position:relative;
+}
+
+.footer-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:#0b6aa8;
+  transition:width .3s ease;
+}
+
+.footer-links a:hover::after{
+  width:100%;
+}
+
+/* Social Icons */
+.footer-social{
+  margin:18px 0;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  margin:0 8px;
+  border-radius:50%;
+  background:#eef3f9;
+  color:#0b3d91;
+  font-size:14px;
+  font-weight:700;
+  text-decoration:none;
+  transition:all .3s ease;
+}
+
+.footer-social a:hover{
+  background:#0b3d91;
+  color:#fff;
+  transform:translateY(-4px);
+}
+
+/* Copyright */
+.footer-copy{
+  margin-top:12px;
+  font-size:13px;
+  color:#555;
+  line-height:1.6;
+}
+
+.footer-copy a{
+  color:#0b6aa8;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.footer-copy a:hover{
+  text-decoration:underline;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .footer-links a{
+    display:inline-block;
+    margin:6px 10px;
+  }
+}
+.footer-social{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-top:12px;
+}
+
+.footer-social a{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#eef3f8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#5f6c7b;
+  font-size:16px;
+  text-decoration:none;
+  transition:.25s ease;
+}
+
+.footer-social a:hover{
+  background:#0b6aa8;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+  <!-- 3 DOT BUTTON -->
+<button id="menuBtn" class="menu-btn" aria-label="Menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- OVERLAY -->
+<div id="menuOverlay" class="menu-overlay"></div>
+
+<!-- SLIDE MENU -->
+<nav id="menuDrawer" class="menu-drawer">
+
+  <div class="menu-header">
+    <div>
+      <strong>DN STORM</strong>
+      <p>DREAM AND NEVER QUIT </p>
+    </div>
+    <button id="menuClose">✕</button>
+  </div>
+
+  <div class="menu-section">
+    <h4>About</h4>
+    <a href="#about">This Marathon</a>
+    <a href="#about">Mission & Values</a>
+    <a href="#about">Organisers</a>
+  </div>
+
+  <div class="menu-section">
+    <h4>Get Involved</h4>
+    <a href="#joinForm">Join Us</a>
+    <a href="#volunteer">Volunteer</a>
+    <a href="#sponsor">Sponsor</a>
+    <a href="#trust">DN STORM Trust</a>
+  </div>
+
+  <div class="menu-section">
+    <h4>Event Details</h4>
+    <a href="#details">Categories & Fees</a>
+    <a href="#details">Event Kit</a>
+    <a href="#prizes">Prizes</a>
+  </div>
+
+</nav>
+
+  <div class="header-inner">
+    <div class="brand">
+      <img src="logo.JPG" alt="DN STORM">
+      <div>
+        <div class="brand-title">DN STORM</div>
+        <div class="brand-sub">DREAMS AND NEVER QUIT</div>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <a class="btn btn-join" target="_blank"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfJiZyR5gRi5Re0MJgMdM_rtUG7jOQoa5a8OvC-4rr79MeM8g/viewform">
+        Join
+      </a>
+      <a class="btn btn-donate" target="_blank"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfId8Oi_wA-c_zeoHRs9xfQvUo5y9YUhsoFd0h1xDL8tklGZQ/viewform">
+        Donate
+      </a>
+      
+</header>
+<section class="hero">
+  <img src="hero.jpg" alt="Run For Her">
+
+  <!-- overlay (non-click blocking) -->
+  <div class="hero-overlay"></div>
+
+  <!-- content -->
+  <div class="hero-content">
+    <h1>Run For Her</h1>
+
+    <p>
+      Women's Safety & Empowerment Marathon — Anna Nagar, Chennai
+    </p>
+
+    <div class="hero-buttons">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSclo4Xxck4b4a5XVXQ1PpTrz_Es4mz_2KlCSC9-6CJK6BA-Lw/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hero-register">
+        Register Now
+      </a>
+
+      <a href="#details" class="hero-details">
+        Event Details
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- EVENT DETAILS -->
+<section id="details" class="event-details-glow">
+  <h2>
+    <span class="glow-text">Run For Her— Marathon 2026</span> 
+  </h2>
+  <p>She is not alone — We run for her</p>
+</section>
+
+<!-- ================= EVENT OVERVIEW & DETAILS ================= -->
+<section class="event-info-section" id="event-overview">
+  <div class="event-info-container">
+
+    <h2>About the Marathon</h2>
+    <p class="event-intro">
+      <strong>This marathon is more than just a run — it is a mission.</strong>
+    </p>
+
+    <p>
+      A mission to support and empower women, to raise awareness about women’s safety
+      in public spaces, and to promote courage, confidence, and physical strength
+      through fitness.
+    </p>
+
+    <p>
+      By joining this event, you become a voice for those who feel unheard. You help
+      create a platform where women feel seen, supported, and protected by their
+      community.
+    </p>
+
+    <blockquote>
+      She is not alone. We all run for her.
+    </blockquote>
+
+ <div class="event-overview-box">
+      <h3>Event Overview</h3>
+      <p>
+        <strong>📅 Date:</strong> February 01, 2026<br>
+        <strong>📍 Location:</strong> Anna Nagar, Chennai<br>
+        <strong>⏰ Time:</strong> 4:00 AM
+      </p>
+    </div>
+
+    <div class="info-cards">
+
+      <div class="info-card">
+        <h4>🏃 Categories</h4>
+        <ul>
+          <li>3 KM Run</li>
+          <li>3 KM Run for Students (Below 16 Years)</li>
+          <li>5 KM Run</li>
+         <li>5 KM Run for Students (Below 16 Years)</li>
+      
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h4>💰 Fees</h4>
+        <ul>
+          <li>3 KM Run — ₹499</li>
+          <li>5 KM Run — ₹599</li>
+          <li>3 KM Run students — ₹499</li>
+          <li>5 KM Run students — ₹599</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h4>🎁 Event Kit</h4>
+        <p>
+          T-Shirt — Bib — Finisher Medal (for 5 KM) — Certificate —
+          Refreshments — Zumba
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+
+<!-- ================= CASH PRIZE — REWARDS ================= -->
+<section class="cash-rewards">
+  <h2 class="cash-title">CASH PRIZE — REWARDS</h2>
+
+  <div class="reward-grid">
+
+    <!-- 5K -->
+    <div class="reward-card">
+      <h3>Event – 5 KM</h3>
+      <table>
+        <tr>
+          <th>Position</th>
+          <th>Men</th>
+          <th>Women</th>
+        </tr>
+        <tr>
+          <td>1st Prize</td>
+          <td>₹5,000</td>
+          <td>₹5,000</td>
+        </tr>
+        <tr>
+          <td>2nd Prize</td>
+          <td>₹4,000</td>
+          <td>₹4,000</td>
+        </tr>
+        <tr>
+          <td>3rd Prize</td>
+          <td>₹3,000</td>
+          <td>₹3,000</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 3K -->
+    <div class="reward-card">
+      <h3>Event – 3 KM</h3>
+      <table>
+        <tr>
+          <th>Position</th>
+          <th>Men</th>
+          <th>Women</th>
+        </tr>
+        <tr>
+          <td>1st Prize</td>
+          <td>₹4,000</td>
+          <td>₹4,000</td>
+        </tr>
+        <tr>
+          <td>2nd Prize</td>
+          <td>₹3,000</td>
+          <td>₹3,000</td>
+        </tr>
+        <tr>
+          <td>3rd Prize</td>
+          <td>₹2,000</td>
+          <td>₹2,000</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 3K Students -->
+    <div class="reward-card">
+      <h3>Event – 3 KM (Students)</h3>
+      <table>
+        <tr>
+          <th>Position</th>
+          <th>Men</th>
+          <th>Women</th>
+        </tr>
+        <tr>
+          <td>1st Prize</td>
+          <td>₹4,000</td>
+          <td>₹4,000</td>
+        </tr>
+        <tr>
+          <td>2nd Prize</td>
+          <td>₹3,000</td>
+          <td>₹3,000</td>
+        </tr>
+        <tr>
+          <td>3rd Prize</td>
+          <td>₹2,000</td>
+          <td>₹2,000</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 5K Students -->
+    <div class="reward-card">
+      <h3>Event – 5 KM (Students)</h3>
+      <table>
+        <tr>
+          <th>Position</th>
+          <th>Men</th>
+          <th>Women</th>
+        </tr>
+        <tr>
+          <td>1st Prize</td>
+          <td>₹5,000</td>
+          <td>₹5,000</td>
+        </tr>
+        <tr>
+          <td>2nd Prize</td>
+          <td>₹3,000</td>
+          <td>₹3,000</td>
+        </tr>
+        <tr>
+          <td>3rd Prize</td>
+          <td>₹2,000</td>
+          <td>₹2,000</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="padding:30px;text-align:center;background:#f8fafc">
+  © 2026 DN STORM. All rights reserved.
+</footer>
+
+<!-- SLIDE MENU SCRIPT -->
+<script>
+
+dotBtn.onclick = () => {
+  dotDrawer.classList.add("open");
+  dotOverlay.classList.add("show");
+};
+
+function closeDotMenu(){
+  dotDrawer.classList.remove("open");
+  dotOverlay.classList.remove("show");
+}
+dotClose.onclick = closeDotMenu;
+dotOverlay.onclick = closeDotMenu;
+</script>
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- Footer Links -->
+    <div class="footer-links">
+    <a href="javascript:void(0)" onclick="openContact()">Contact Us</a>
+    <a href="#">Change Language</a>
+    </div>
+
+<div class="footer-social">
+  <a href="https://x.com/storm_dn82789?s=11" target="_blank" aria-label="X">
+    <i class="fa-brands fa-x-twitter"></i>
+  </a>
+
+  <a href="https://www.youtube.com/@deepthi_powerlifter" target="_blank" aria-label="YouTube">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+
+  <a href="https://www.instagram.com/dn._.storm/" target="_blank" aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+</div>
+
+    <!-- Copyright -->
+    <div class="footer-copy">
+      © 2026 DN STORM. All rights reserved.
+      <br>
+      <a href="terms-of-use.html">Terms of Use</a>
+      ·
+      <a href="terms-and-conditions.html">Terms & Conditions</a>
+    </div>
+
+  </div>
+</footer>
+<!-- CONTACT OVERLAY -->
+<div id="contactOverlay" class="contact-overlay"></div>
+
+<!-- CONTACT CARD -->
+<div id="contactCard" class="contact-card">
+
+  <button class="contact-close" onclick="closeContact()">✕</button>
+
+  <div class="contact-left">
+    <h2>DEEPTHI RAJ B.C</h2>
+    <p class="designation">Founder & Event Director</p>
+
+    <img src="logo.JPG" alt="DN STORM Logo" class="contact-logo">
+
+    <p class="brand-quote">
+      Alone in the battle together with<br>
+      <strong>DN STORM</strong><br>
+      Dream and Never Quit
+    </p>
+  </div>
+
+  <div class="contact-right">
+
+    <div class="contact-row">
+      <span class="icon">📞</span>
+      <a href="tel:7676811553">7676811553</a>
+    </div>
+
+    <div class="contact-row">
+      <span class="icon">✉️</span>
+      <a href="mailto:dnstorm260723@gmail.com">
+        dnstorm260723@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-row">
+      <span class="icon">🏠</span>
+      <p>
+        24/437, N Block, 21st Street,<br>
+        Anna Nagar East,<br>
+        Chennai – 600102
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const menuDrawer = document.getElementById("menuDrawer");
+const menuOverlay = document.getElementById("menuOverlay");
+const menuClose = document.getElementById("menuClose");
+
+menuBtn.onclick = () => {
+  menuDrawer.classList.add("open");
+  menuOverlay.classList.add("show");
+};
+
+menuClose.onclick = closeMenu;
+menuOverlay.onclick = closeMenu;
+
+function closeMenu(){
+  menuDrawer.classList.remove("open");
+  menuOverlay.classList.remove("show");
+}
+</script>
+<script>
+function openContact(){
+  document.getElementById("contactOverlay").style.display="block";
+  document.getElementById("contactCard").classList.add("show");
+}
+
+function closeContact(){
+  document.getElementById("contactOverlay").style.display="none";
+  document.getElementById("contactCard").classList.remove("show");
+}
+</script>
+
+</body>
+</html>

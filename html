@@ -1,0 +1,1274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DN STORM — Run For Her Marathon 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  /* 3 DOT BUTTON */
+.dot-menu-btn{
+  font-size:26px;
+  background:none;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* OVERLAY */
+.dot-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:999;
+}
+
+.dot-overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* SLIDE DRAWER */
+.dot-drawer{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:100%;
+  max-width:420px;
+  height:100vh;
+  background:#fff;
+  z-index:1000;
+  transition:right .35s ease;
+  padding:20px;
+  overflow-y:auto;
+}
+
+.dot-drawer.open{
+  right:0;
+}
+
+/* HEADER */
+.dot-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #eee;
+  padding-bottom:12px;
+}
+
+.dot-header strong{
+  font-size:18px;
+  color:#0b3d91;
+}
+
+.dot-header p{
+  font-size:12px;
+  color:#666;
+}
+
+#dotClose{
+  background:none;
+  border:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* CONTENT */
+.dot-columns{
+  display:grid;
+  gap:28px;
+  margin-top:24px;
+}
+
+.dot-columns h4{
+  color:#0b3d91;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.dot-columns a{
+  display:block;
+  text-decoration:none;
+  color:#444;
+  padding:6px 0;
+}
+
+.dot-columns a:hover{
+  color:#0b6aa8;
+}
+
+  /* ===== ENHANCED 3 DOT MENU ===== */
+.three-dot-menu{
+  position:relative;
+}
+
+/* Button */
+.dot-btn{
+  background:rgba(255,255,255,0.18);
+  border:1px solid rgba(255,255,255,0.35);
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  transition:all .3s ease;
+}
+
+.dot-btn:hover{
+  background:rgba(255,255,255,0.3);
+  transform:scale(1.05);
+}
+
+/* Dots */
+.dot{
+  width:5px;
+  height:5px;
+  background:#fff;
+  border-radius:50%;
+}
+
+/* Dropdown */
+.dot-dropdown{
+  position:absolute;
+  right:0;
+  top:54px;
+  background:#fff;
+  min-width:220px;
+  border-radius:14px;
+  box-shadow:0 18px 50px rgba(0,0,0,.25);
+  display:none;
+  overflow:hidden;
+  z-index:3000;
+  animation:fadeSlide .3s ease;
+}
+
+.dot-dropdown a{
+  display:block;
+  padding:14px 18px;
+  color:#0b3d91;
+  font-size:15px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.dot-dropdown a:hover{
+  background:#f2f6fb;
+}
+
+/* Animation */
+@keyframes fadeSlide{
+  from{opacity:0;transform:translateY(-8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+  /* ===== 3 DOT MENU ===== */
+.three-dot-menu{
+  position:relative;
+}
+
+.dot-btn{
+  background:none;
+  border:none;
+  font-size:22px;
+  color:#fff;
+  cursor:pointer;
+  padding:6px 10px;
+  border-radius:6px;
+}
+
+.dot-btn:hover{
+  background:rgba(255,255,255,0.15);
+}
+
+.dot-dropdown{
+  position:absolute;
+  right:0;
+  top:38px;
+  background:#fff;
+  min-width:200px;
+  border-radius:10px;
+  box-shadow:0 15px 40px rgba(0,0,0,.2);
+  display:none;
+  overflow:hidden;
+  z-index:2000;
+}
+
+.dot-dropdown a{
+  display:block;
+  padding:12px 16px;
+  color:#0b3d91;
+  font-size:14px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.dot-dropdown a:hover{
+  background:#f2f6fb;
+}
+
+  /* ===== CONTACT US ===== */
+.contact-us{
+  padding:90px 20px;
+  background:#f7fafc;
+}
+
+.contact-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  background:linear-gradient(90deg,#0b5a78,#082c4a);
+  color:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.25);
+}
+
+/* LEFT */
+.contact-left{
+  padding:40px;
+  text-align:center;
+}
+
+.contact-left h2{
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.designation{
+  color:#f5c77a;
+  font-weight:700;
+  margin:8px 0 22px;
+}
+
+.contact-logo img{
+  width:130px;
+  margin:18px auto;
+}
+
+.brand-name{
+  font-size:22px;
+  font-weight:900;
+  margin-top:10px;
+}
+
+.brand-tagline{
+  font-size:14px;
+  opacity:.85;
+}
+
+/* RIGHT */
+.contact-right{
+  background:#06223d;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:26px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  font-size:17px;
+}
+
+.contact-item i{
+  font-size:20px;
+  color:#f7a046;
+  margin-top:4px;
+}
+
+.contact-item a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.contact-item a:hover{
+  text-decoration:underline;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+  .contact-left,
+  .contact-right{
+    text-align:center;
+  }
+  .contact-item{
+    justify-content:center;
+  }
+}
+
+  /* ===== COUNTDOWN ===== */
+.countdown-section{
+  padding:70px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#0b4f6c,#0a2e4f);
+  color:#fff;
+}
+
+.countdown-title{
+  font-size:28px;
+  font-weight:900;
+  margin-bottom:30px;
+  animation:pulseText 2s infinite;
+}
+
+.countdown-box{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
+}
+
+.time{
+  background:rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:18px 22px;
+  min-width:90px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+  animation:floatUp 3s ease-in-out infinite;
+}
+
+.time span{
+  font-size:34px;
+  font-weight:900;
+  display:block;
+}
+
+.time small{
+  font-size:13px;
+  letter-spacing:1px;
+  opacity:.9;
+}
+
+/* Animations */
+@keyframes pulseText{
+  0%,100%{opacity:1}
+  50%{opacity:.6}
+}
+
+@keyframes floatUp{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .time{
+    min-width:72px;
+    padding:14px;
+  }
+  .time span{font-size:26px}
+}
+
+  /* Footer Badge (End Polio style size) */
+.footer-badge{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+}
+
+.footer-badge img{
+  width:90px;        /* ✅ Ideal End Polio size */
+  max-width:100%;
+  height:auto;
+  opacity:0.9;
+}
+.footer-badge img{ width:70px; }
+
+  /* ===== FOOTER STYLING ===== */
+.site-footer{
+  background:#f8fafc;
+  padding:40px 20px;
+  border-top:1px solid #e5eaf0;
+  text-align:center;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+}
+
+.footer-links{
+  margin-bottom:10px;
+}
+
+.footer-links a{
+  margin:0 12px;
+  color:#1f3a5f;
+  font-size:14px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.footer-links a:hover{
+  text-decoration:underline;
+}
+
+.footer-links.secondary{
+  margin-top:6px;
+}
+
+.footer-social{
+  margin:16px 0;
+}
+
+.footer-social a{
+  margin:0 10px;
+  color:#555;
+  font-size:18px;
+  transition:transform .2s ease, color .2s ease;
+}
+
+.footer-social a:hover{
+  color:#0b6aa8;
+  transform:translateY(-3px);
+}
+
+.footer-copy{
+  font-size:13px;
+  color:#555;
+  margin-top:10px;
+}
+
+.footer-copy a{
+  color:#0b6aa8;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.footer-copy a:hover{
+  text-decoration:underline;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .footer-links a{
+    display:inline-block;
+    margin:6px 8px;
+  }
+}
+
+  /* ===== CASH PRIZE ===== */
+.cash-prize{
+  padding:80px 20px;
+  background:linear-gradient(135deg,#f1e42b,hsl(2, 84%, 34%));
+  color:#fff;
+}
+
+.prize-grid{
+  max-width:1200px;
+  margin:40px auto 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+
+.prize-card{
+  background:linear-gradient(180deg,#4f1c8a,hsla(180, 73%, 51%, 0.555));
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgb(255, 253, 253);
+}
+
+.prize-card h3{
+  text-align:center;
+  margin-bottom:14px;
+  font-size:18px;
+  font-weight:800;
+}
+
+.prize-card table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  color:#000;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.prize-card th,
+.prize-card td{
+  padding:10px;
+  text-align:center;
+  font-size:14px;
+}
+
+.prize-card th{
+  background:#f3e8ff;
+  font-weight:800;
+}
+
+.prize-card tr:nth-child(even){
+  background:#f9f9f9;
+}
+
+  /* ===== SCROLL ANIMATION ===== */
+.reveal-card{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.reveal-card.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+  /* ================= ADDITIONAL DETAILS ================= */
+/* ===== ADDITIONAL DETAILS FIX ===== */
+.additional-details{
+  padding:70px 20px;
+  background:#fff;
+}
+
+.center{
+  text-align:center;
+}
+
+.details-grid{
+  max-width:1200px;
+  margin:40px auto 0;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:24px;
+}
+
+.detail-card{
+  background:#f9fbff;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 10px 28px rgba(11,61,145,.08);
+  transition:transform .3s ease;
+}
+
+.detail-card:hover{
+  transform:translateY(-6px);
+}
+
+.detail-card h3{
+  color:var(--blue1);
+  margin-bottom:10px;
+}
+
+.detail-card p,
+.detail-card li{
+  font-size:15px;
+  color:#556b7a;
+  margin-bottom:6px;
+}
+
+.detail-card ul{
+  padding-left:18px;
+}
+
+/* Tablet */
+@media(max-width:992px){
+  .details-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media(max-width:576px){
+  .details-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+:root{
+  --blue1:#0b6aa8;
+  --blue2:#0b3d91;
+  --gold:#E8C16A;
+  --text:#102a43;
+}
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,system-ui;
+  background:#f6f8fb;
+  color:var(--text);
+}
+
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:1200;
+  background:linear-gradient(90deg,var(--blue1),var(--blue2));
+}
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img{width:52px}
+.brand-title{font-weight:900;color:var(--gold)}
+.brand-sub{font-size:12px;color:#fff}
+
+.nav-actions{
+  display:flex;
+  gap:10px;
+}
+.btn{
+  padding:8px 18px;
+  border-radius:22px;
+  font-weight:800;
+  text-decoration:none;
+  transition:.3s;
+}
+.btn-join{
+  border:2px solid #fff;
+  color:#fff;
+}
+.btn-join:hover{background:#fff;color:var(--blue2)}
+.btn-donate{
+  background:var(--gold);
+  color:#4A0E17;
+  animation:pulse 2s infinite;
+}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  height:420px;
+}
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.7));
+  display:flex;
+  align-items:flex-end;
+}
+.hero-content{
+  max-width:1100px;
+  margin:auto;
+  padding:28px;
+  color:#fff;
+  animation:fadeUp 1s ease forwards;
+}
+.hero h1{
+  font-size:42px;
+  font-weight:900;
+}
+.hero-buttons{
+  margin-top:14px;
+}
+.hero-buttons a{
+  display:inline-block;
+  margin-right:10px;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:800;
+  text-decoration:none;
+  transition:.3s;
+}
+.hero-register{
+  background:var(--gold);
+  color:#4A0E17;
+}
+.hero-register:hover{transform:scale(1.05)}
+.hero-details{
+  border:2px solid #fff;
+  color:#fff;
+}
+
+/* ================= ABOUT ================= */
+.about{
+  background:#fff;
+  padding:70px 20px;
+}
+.about-inner{
+  max-width:900px;
+  margin:auto;
+}
+.about h2{
+  color:var(--blue1);
+  font-size:28px;
+  font-weight:900;
+}
+.about p{
+  margin-top:14px;
+  line-height:1.8;
+  color:#556b7a;
+}
+.about blockquote{
+  margin-top:14px;
+  padding-left:14px;
+  border-left:5px solid var(--gold);
+  font-style:italic;
+  font-weight:700;
+}
+
+/* ================= EVENT DETAILS ================= */
+.event-details{
+  background:#f9fbff;
+  padding:70px 20px;
+}
+.details-inner{
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
+}
+.event-details h2{
+  font-size:30px;
+  font-weight:900;
+  color:var(--blue1);
+}
+.details-sub{
+  color:#6b7c93;
+  margin-top:6px;
+}
+.highlight-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin:30px 0;
+}
+.highlight-card{
+  background:#fff;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(11,61,145,.08);
+}
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+.info-card{
+  background:#fff;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(11,61,145,.08);
+  text-align:left;
+}
+
+/* ================= CASH PRIZE ================= */
+.cash-prize{
+  background:linear-gradient(135deg,#14001f,#2d0055);
+  padding:90px 20px;
+}
+.cash-inner{
+  max-width:1200px;
+  margin:auto;
+}
+.cash-prize h2{
+  text-align:center;
+  color:#4fdcff;
+  font-size:34px;
+  margin-bottom:40px;
+}
+.cash-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+}
+.cash-card{
+  background:#1b0033;
+  border-radius:16px;
+  padding:20px;
+  color:#fff;
+}
+.cash-card h3{
+  text-align:center;
+  margin-bottom:12px;
+}
+.cash-card table{
+  width:100%;
+  border-collapse:collapse;
+}
+.cash-card th,
+.cash-card td{
+  padding:8px;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  text-align:center;
+}
+.cash-card th{color:#4fdcff}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(232,193,106,.6)}
+  70%{box-shadow:0 0 0 16px rgba(232,193,106,0)}
+  100%{box-shadow:0 0 0 0 rgba(232,193,106,0)}
+}
+
+</style>
+</head>
+
+<body>
+  <!-- 3 DOT BUTTON -->
+<button id="dotBtn" class="dot-menu-btn">⋮</button>
+
+<!-- OVERLAY -->
+<div id="dotOverlay" class="dot-overlay"></div>
+
+<!-- SLIDE MENU -->
+<div id="dotDrawer" class="dot-drawer">
+
+  <div class="dot-header">
+    <div>
+      <strong>DN STORM</strong>
+      <p>Run For Her — Marathon 2026</p>
+    </div>
+    <button id="dotClose">✕</button>
+  </div>
+
+  <div class="dot-columns">
+    <div>
+      <h4>About</h4>
+      <a href="#">This Marathon</a>
+      <a href="#">Mission & Values</a>
+      <a href="#">Organisers</a>
+    </div>
+
+    <div>
+      <h4>Get Involved</h4>
+      <a href="#">Overview</a>
+      <a href="#">Volunteer</a>
+      <a href="#">Sponsor</a>
+      <a href="#">DN STORM Trust</a>
+    </div>
+
+    <div>
+      <h4>Event Details</h4>
+      <a href="#">Categories & Fees</a>
+      <a href="#">Event Kit</a>
+      <a href="#">Prizes</a>
+    </div>
+  </div>
+
+</div>
+
+  <script>
+const eventDate = new Date("February 1, 2026 04:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = eventDate - now;
+
+  if (diff < 0) return;
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("days").innerText = d;
+  document.getElementById("hours").innerText = h;
+  document.getElementById("minutes").innerText = m;
+  document.getElementById("seconds").innerText = s;
+}, 1000);
+</script>
+
+<!-- HEADER -->
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <img src="logo.JPG" alt="DN STORM">
+      <div>
+        <div class="brand-title">DN STORM</div>
+        <div class="brand-sub">Run For Her — Marathon 2026</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-join" target="_blank"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfJiZyR5gRi5Re0MJgMdM_rtUG7jOQoa5a8OvC-4rr79MeM8g/viewform">
+         Join
+      </a>
+      <a class="btn btn-donate" target="_blank"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSfId8Oi_wA-c_zeoHRs9xfQvUo5y9YUhsoFd0h1xDL8tklGZQ/viewform">
+         Donate
+      </a>
+    </div>
+  </div>
+
+<!-- 3 DOT MENU (NO JS) -->
+<details class="three-dot-menu">
+  <summary class="dot-btn" aria-label="More options">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </summary>
+
+  <div class="dot-dropdown">
+    <a href="#get-involved">Get Involved</a>
+    <a href="#our-causes">Our Causes</a>
+    <a href="#our-programs">Our Programs</a>
+    <a href="#contact-us">Contact Us</a>
+  </div>
+</details>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="hero.jpg" alt="Run For Her">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Run For Her</h1>
+      <p>Women's Safety & Empowerment Marathon — Anna Nagar, Chennai</p>
+      <div class="hero-buttons">
+        <a class="hero-register" target="_blank"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSclo4Xxck4b4a5XVXQ1PpTrz_Es4mz_2KlCSC9-6CJK6BA-Lw/viewform">
+           Register Now
+        </a>
+        <a class="hero-details" href="#details">Event Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+  
+
+<!-- EVENT DETAILS -->
+<section class="event-details" id="details">
+  <div class="details-inner">
+    <h2>Run For Her — Marathon 2026</h2>
+    <p class="details-sub">She is not alone — We run for her</p>
+  </div>
+</section>
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-inner">
+    <h2>About DN STORM</h2>
+    <p><strong>This marathon is more than just a run — it is a mission.</strong></p>
+    <p>
+      A mission to support and empower women, to raise awareness about women’s safety
+      in public spaces, and to promote courage, confidence, and physical strength.
+    </p>
+    <p>
+      By joining this event, you become a voice for those who feel unheard. Every step
+      you take sends a strong message —
+    </p>
+    <blockquote>She is not alone. We all run for her.</blockquote>
+  </div>
+<!-- ================= ADDITIONAL DETAILS ================= -->
+<section class="additional-details">
+  <h2 class="section-title center">Additional Details</h2>
+
+  <div class="details-grid">
+
+    <div class="detail-card">
+      <h3>📍 Event</h3>
+      <p><strong>Date:</strong> February 01, 2026</p>
+      <p><strong>Location:</strong> Anna Nagar, Chennai</p>
+      <p><strong>Time:</strong> 4:00 AM</p>
+    </div>
+
+    <div class="detail-card">
+      <h3>🏃 Categories</h3>
+      <ul>
+        <li>3 KM Run</li>
+        <li>5 KM Run</li>
+        <li>3 KM Run (Students – Below 16)</li>
+        <li>Fun Run (All Age Groups)</li>
+        <li><strong>Men & Women</strong></li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h3>💰 Fees</h3>
+      <ul>
+        <li>5 KM — ₹599</li>
+        <li>3 KM — ₹499</li>
+        <li>3 KM fun run — ₹499</li>
+        <li>3 KM students— ₹499</li>
+      </ul>
+    </div>
+
+    <div class="detail-card">
+      <h3>🎁 Event Kit</h3>
+      <ul>
+        <li>T-Shirt</li>
+        <li>Bib</li>
+        <li>Medal</li>
+        <li>Certificate</li>
+        <li>Refreshments</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+    </div>
+  </div>
+</section>
+<!-- ================= COUNTDOWN ================= -->
+<section class="countdown-section">
+  <h2 class="countdown-title">Run Begins In</h2>
+
+  <div class="countdown-box">
+    <div class="time">
+      <span id="days">00</span>
+      <small>Days</small>
+    </div>
+    <div class="time">
+      <span id="hours">00</span>
+      <small>Hours</small>
+    </div>
+    <div class="time">
+      <span id="minutes">00</span>
+      <small>Minutes</small>
+    </div>
+    <div class="time">
+      <span id="seconds">00</span>
+      <small>Seconds</small>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CASH PRIZE - REWARDS ================= -->
+<section class="cash-prize">
+  <h2 class="section-title center">CASH PRIZE – REWARDS</h2>
+
+  <div class="prize-grid">
+
+    <!-- 5K -->
+    <div class="prize-card reveal-card">
+      <h3>Event – 5K</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Men</th>
+            <th>Women</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1st</td><td>₹7,000</td><td>₹7,000</td></tr>
+          <tr><td>2nd</td><td>₹4,000</td><td>₹4,000</td></tr>
+          <tr><td>3rd</td><td>₹3,000</td><td>₹3,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  <!-- 5K  -->
+    <div class="prize-card reveal-card">
+      <h3>Event – 5K(Students)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Men</th>
+            <th>Women</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1st</td><td>₹7,000</td><td>₹7,000</td></tr>
+          <tr><td>2nd</td><td>₹4,000</td><td>₹4,000</td></tr>
+          <tr><td>3rd</td><td>₹3,000</td><td>₹3,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3K -->
+    <div class="prize-card reveal-card">
+      <h3>Event – 3K</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Men</th>
+            <th>Women</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1st</td><td>₹4,000</td><td>₹4,000</td></tr>
+          <tr><td>2nd</td><td>₹3,000</td><td>₹3,000</td></tr>
+          <tr><td>3rd</td><td>₹2,000</td><td>₹2,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3K Students -->
+    <div class="prize-card reveal-card">
+      <h3>Event – 3K (Students)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Men</th>
+            <th>Women</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1st</td><td>₹4,000</td><td>₹4,000</td></tr>
+          <tr><td>2nd</td><td>₹3,000</td><td>₹3,000</td></tr>
+          <tr><td>3rd</td><td>₹2,000</td><td>₹2,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+  </div>
+</section>
+
+<script>
+/* ===== SCROLL REVEAL ===== */
+const revealCards = document.querySelectorAll('.reveal-card');
+
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        setTimeout(() => {
+          entry.target.classList.add('active');
+        }, index * 120); // stagger effect
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+revealCards.forEach(card => revealObserver.observe(card));
+
+</script>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <div class="footer-links">
+      <a href="#joinForm">Get Involved</a>
+      <a href="#about">Our Causes</a>
+      <a href="#details">Our Programs</a>
+      <a href="#news">News & Features</a>
+    </div>
+
+    <div class="footer-links">
+      <a href="#contact">Contact Us</a>
+      <a href="#">Change Language</a>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div class="footer-social">
+      <a href="https://x.com/storm_dn82789?s=11" target="_blank" aria-label="X">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="https://www.youtube.com/@deepthi_powerlifter" target="_blank" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://www.instagram.com/dn._.storm/" target="_blank" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </div>
+
+    <!-- COPYRIGHT & POLICIES -->
+    <div class="footer-copy">
+      © 2026 DN STORM. All rights reserved.
+      <br>
+      <a href="DN-STORM-Terms-and-Conditions.docx" download>
+        Terms & Conditions
+      </a>
+      ·
+      <a href="#">Privacy Policy</a>
+    </div>
+
+ <div class="footer-badge">
+  <img src="end-polio.png" alt="DN STORM Logo">
+</div>
+
+  </div>
+  <!-- ================= CONTACT US ================= -->
+<section id="contact-us" class="contact-us reveal">
+  <div class="contact-container">
+
+   
+</section>
+
+</footer>
+<script>
+const dotBtn = document.querySelector('.dot-btn');
+const dotMenu = document.querySelector('.dot-dropdown');
+
+dotBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  dotMenu.style.display =
+    dotMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', () => {
+  dotMenu.style.display = 'none';
+});
+</script>
+  ...
+  <!-- footer ends here -->
+
+  <script>
+  const dotBtn = document.querySelector('.dot-btn');
+  const dotMenu = document.querySelector('.dot-dropdown');
+
+  dotBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dotMenu.style.display =
+      dotMenu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  document.addEventListener('click', () => {
+    dotMenu.style.display = 'none';
+  });
+  </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const dotBtn = document.querySelector(".dot-btn");
+  const dotMenu = document.querySelector(".dot-dropdown");
+
+  if (!dotBtn || !dotMenu) {
+    console.error("3-dot menu elements not found");
+    return;
+  }
+
+  dotBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dotMenu.style.display =
+      dotMenu.style.display === "block" ? "none" : "block";
+  });
+
+  document.addEventListener("click", function () {
+    dotMenu.style.display = "none";
+  });
+
+});
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
